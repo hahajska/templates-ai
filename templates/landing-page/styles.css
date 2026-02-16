@@ -1,0 +1,8 @@
+/* Only add CSS that Tailwind utilities can't cover */
+.hero-gradient {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    hsla(240, 5.9%, 10%, 0.05),
+    transparent
+  );
+}
