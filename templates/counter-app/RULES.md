@@ -1,21 +1,22 @@
 # Template Rules
 
-## Design Tokens
-- Uses shadcn/ui neutral palette defined via Tailwind CDN config in index.html.
-- Core tokens: background, foreground, card, primary, secondary, muted, accent, destructive, border, input, ring.
-- Reference tokens by Tailwind class (e.g. `bg-primary`, `text-muted-foreground`).
+## Architecture
+- `index.js` MUST remain the React mount bootstrap and MUST NOT contain feature logic.
+- Counter state MUST live in `App.js` as local React state.
+- `styles.css` MUST stay limited to global CSS that Tailwind utilities cannot express (for this template: animation keyframes).
 
-## Structure Rules
-- `App.js` is the single component — keep counter logic self-contained.
-- Preserve the fade-in animation on count change (keyed div).
-- Prefer editing `App.js` over creating new component files for simple additions.
-
-## Accessibility Rules
-- All buttons must have discernible text or aria-labels.
-- Maintain visible focus outlines on interactive elements.
+## File Rules
+- For typical counter changes (step size, bounds, extra buttons), edit `App.js` first instead of creating new files.
+- Create `components/` only when adding a clearly separate UI block that improves readability or reuse.
+- `index.html` MUST keep the Tailwind CDN setup and the existing token names (`background`, `foreground`, `card`, `primary`, `secondary`, `muted`, `accent`, `destructive`, `border`, `input`, `ring`).
 
 ## Constraints
-- No Next.js APIs.
-- No TypeScript — plain .js files only.
-- Keep styling in Tailwind utility classes; use styles.css only for keyframe animations.
-- Do not add server-side dependencies.
+- Use plain JavaScript (`.js`) files only; NEVER introduce TypeScript.
+- NEVER use Next.js APIs, server-side rendering, or Node-only APIs.
+- NEVER add npm packages without explicit user approval.
+- Keep template changes within platform limits (maximum 30 files and 250 KB total template size).
+
+## Style
+- Use Tailwind utility classes and token-based classes such as `bg-primary` and `text-muted-foreground`.
+- Preserve the centered card layout and the count-change fade animation behavior.
+- Interactive controls MUST keep visible keyboard focus styles and discernible labels.

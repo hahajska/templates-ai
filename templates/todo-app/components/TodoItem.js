@@ -6,6 +6,7 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
     <div className="flex items-center gap-3 p-3">
       <button
         onClick={() => onToggle(todo.id)}
+        aria-label={todo.completed ? "Mark as incomplete" : "Mark as complete"}
         className="flex-shrink-0 transition-colors"
       >
         <CheckCircle
@@ -28,6 +29,7 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
       </span>
       <button
         onClick={() => onDelete(todo.id)}
+        aria-label="Delete todo"
         className="flex-shrink-0 text-muted-foreground hover:text-destructive transition-colors"
       >
         <Trash2 size={16} />
