@@ -1,4 +1,9 @@
-# Template Rules
+# Golden Baseline — Runtime AI Agent Rules
+
+> Standard `rules.md` content for the AI agent that **iterates on templates with users** in the web app.
+> Copy the relevant sections into each template's `rules.md`, then add template-specific rules below.
+
+---
 
 ## Instruction Priority
 

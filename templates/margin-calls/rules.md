@@ -40,7 +40,7 @@
 - MUST NOT use inline `style={}` except for truly dynamic values (e.g., computed positions from state).
 - MUST NOT create standalone `.css` files with custom classes for things Tailwind can handle.
 - `styles.css` is reserved for keyframe animations, scrollbar styling, and similar.
-- MUST use shadcn/ui design tokens (`bg-primary`, `text-muted-foreground`, `border-border`) — not raw color values like `bg-gray-500`.
+- MUST use shadcn/ui design tokens (`bg-primary`, `text-muted-foreground`, `border-border`) — not raw color values like `bg-gray-500`. Exception: semantic status overrides for states shadcn variants don't cover (e.g., amber/yellow warning) are allowed as a single defined class.
 - MUST NOT modify the Tailwind config in `public/index.html` unless the user explicitly requests theme changes.
 
 ## Responsive Design
@@ -90,7 +90,7 @@
 
 - Components MUST use `export default function ComponentName()`.
 - Component files MUST be PascalCase (e.g., `TodoItem.js`).
-- Every `.js` file that uses JSX MUST include `import React from "react"`.
+- Include `import React from "react"` only when required by the runtime (React 17+ with new JSX transform does not need it).
 - Props MUST be destructured in function parameters.
 - Event handlers MUST use `handle` prefix (e.g., `handleSubmit`, `handleDelete`).
 
