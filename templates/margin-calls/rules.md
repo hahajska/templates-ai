@@ -65,6 +65,11 @@
 - MUST NOT load external JavaScript via `<script>` tags.
 - MUST NOT include server-side code, API routes, or SSR logic.
 
+## Page Layout
+
+- MUST NOT include a page title heading or description/subtitle at the top of the UI. The page content should start directly with the functional elements (stats, tables, forms, etc.).
+- MUST NOT use all-uppercase text (e.g., `uppercase` class or manual capitalization). Use normal sentence case or title case instead.
+
 ## UX and Accessibility
 
 - Prioritize clarity and task completion over visual novelty.
